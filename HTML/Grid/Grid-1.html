@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 1</title>
+    <style>
+        #krt{    
+            display: grid;
+            padding: 20px;
+            grid-template-columns: repeat(2,250px);
+            grid-template-rows: repeat(1,50px);
+            gap: 20px 20px;
+        }
+        #krt>div{
+            background-color: #444444;
+            border-radius: 10px;
+            color: white;
+            padding: 10px;
+
+        }
+        #krt1{    
+            display: grid;
+            padding-left: 20px;
+            grid-template-columns:100px 400px;
+            grid-template-rows:50px;
+            gap: 20px 20px;
+        }
+        #krt1>div{
+            background-color: #444444;
+            border-radius: 10px;
+            color: white;
+            padding: 20px;
+
+        }
+        #krt2{
+            display: grid;
+            padding-left: 20px;
+            grid-template-columns: 520px;
+            grid-template-rows: 50px;
+            padding: 20px;
+
+
+        }
+        #krt2>div{
+            background-color: #444444;
+            border-radius: 10px;
+            color: white;
+            padding: 20px;
+
+        }
+    </style>
+</head>
+<body style="height: 100%;width: 100%; display: flex;justify-content: center;align-items: center;">
+    <div style="height: 250px; width: 800px;">
+        <div id="krt">
+            <div>A</div>
+            <div>B</div>
+        </div>
+        <div id="krt1">
+            <div>C</div>
+            <div>D</div>
+        </div>
+        <div id="krt2"><div>E</div></div>
+    </div>
+    
+</body>
+</html>
