@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key board</title>
+    <style>
+        #krt>#dor{
+            display: flex;
+            height: 250px;
+            width: 69%;
+            border-radius: 15px;
+            background-color:#262C2C;
+            flex-direction: column;
+
+        }
+        #dor>#krt1{
+            padding: 20px;
+            color: #0FA4D1;
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(12,65px);
+            grid-template-rows: repeat(2,25px); 
+            gap: 20px 20px;
+        }
+        #krt1>div{
+            background-color:#2F3639;
+            border-radius: 5px;
+            color: #0FA4D1;
+        }
+        #dor>#nobi{
+            padding-left: 20px;
+            color: #0FA4D1;
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(11,65px);
+            grid-template-rows: repeat(2,25px); 
+            gap: 20px 20px;
+        }
+        #nobi>div{
+            background-color:#2F3639;
+            color: #0FA4D1;
+            border-radius: 5px;
+        }
+        #dor>#ko{
+            padding: 20px;
+            color: #0FA4D1;
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(6,65px);
+            grid-template-rows: repeat(1,25px); 
+            gap: 20px 20px;
+        }
+        #ko>div{
+            background-color:#2F3639;
+            color: #0FA4D1;
+            border-radius: 5px;
+        }
+        #ko>#om{
+            display: flex;
+            background-color: #262C2C;
+            
+            text-align: center;
+            height: 25px;
+            width: 660px;
+            justify-content: space-between;
+             
+    
+        }
+        #om>div{
+            background-color:#2F3639;
+            color: #0FA4D1;
+            width: 65px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            align-self: center;
+        }
+
+
+    </style>
+</head>
+<body  style="text-align: center;">
+    <div id="krt" style="display: flex;height: 600px;justify-content: center;align-items: center;background-color: #0FA4D1;">
+        <div id="dor">
+            <div id="krt1">
+            <div>~</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>0</div>
+            <div>delete</div>
+            <div>tab</div>
+            <div>Q</div>
+            <div>W</div>
+            <div>E</div>
+            <div>R</div>
+            <div>T</div>
+            <div>Y</div>
+            <div>U</div>
+            <div>I</div>
+            <div>O</div>
+            <div>P</div>
+            <div>\</div>
+        </div>
+            <div id="nobi">
+            <div>caps</div>
+            <div>A</div>
+            <div>S</div>
+            <div>D</div>
+            <div>F</div>
+            <div>G</div>
+            <div>H</div>
+            <div>J</div>
+            <div>K</div>
+            <div>L</div>
+            <div style="height: 25px; width: 150px;">Enter</div>
+            <div >Shift</div>
+            <div>Z</div>
+            <div>X</div>
+            <div>C</div>
+            <div>V</div>
+            <div>B</div>
+            <div>N</div>
+            <div>M</div>
+            <div><</div>
+            <div>></div>
+            <div style="height: 25px; width: 150px;">Shift</div>
+        </div>
+        <div id="ko">
+                <div>Window</div>
+                <div>control</div>
+                <div> option</div>
+                <div>alt</div>
+                <div id="om">
+                    <div style="width: 320px;">Space</div>
+                <div>alt</div>
+                <div>option</div>
+                <div><-</div>
+                <div>-></div>
+            </div>
+        </div>
+            
+        </div>
+    </div>
+    </div>
+    
+</body>
+</html>
