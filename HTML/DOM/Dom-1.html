@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+<body>
+    <div style="margin: 30px;">
+    <input id="name"  type="text" placeholder="enter name" value=""/>
+    <button onclick="clickMe()">Submit</button>
+    <div style="display: flex;">
+    <h1>Enter value:</h1>
+    <h1 id="nameDisplay"></h1>
+    </div>
+
+    </div>
+</body>
+</html>
+<script>
+    let a=document.getElementById("nameDisplay")
+    function clickMe(){
+    var username=document.getElementById("name").value;
+    document.getElementById("nameDisplay").innerText=username;
+    alert(a.innerText)
+   }
+
+  
+
+</script>
