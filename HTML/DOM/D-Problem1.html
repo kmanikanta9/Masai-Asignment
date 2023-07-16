@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Calculator</title>
+</head>
+<body>
+    <div style="gap: 20px;margin: 40px;padding-left: 10px;margin-right: 10px;">
+    <input id="addition"  type="number" placeholder="enter 1st Number" value=""/>
+    <input id="val2"  style="gap: 10px;margin: 10px;"  type="number" placeholder="enter 2nd Number" value=""/>
+    </div>
+    <div style="display: flex; gap: 20px;margin-left: 80px;">
+        <button onclick="add()">Add</button>
+        <button onclick="sub()">Subtract</button>
+        <button onclick="mul()">Multiply</button>
+        <button onclick="div()">Divide</button>
+    </div>
+</body>
+</html>
+<script>
+    let a= document.getElementById("addition");
+    let b=document.getElementById("val2");
+    function add(){
+        alert(Number(a.value)+Number(b.value))
+    }
+    let c=document.getElementById("addition");
+    let d=document.getElementById("val2");
+    function sub(){
+        alert((c.value)-(d.value))
+    }
+    let e=document.getElementById("addition");
+    let f=document.getElementById("val2");
+    function mul(){
+        alert((e.value)*(f.value))
+    }
+    let g=document.getElementById("addition");
+    let h=document.getElementById("val2");
+    function div(){
+        alert((g.value)/(h.value))
+    }
+
+
+
+</script>
