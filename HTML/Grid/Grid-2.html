@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid2</title>
+    <style>
+        #krt{
+            display: grid;
+            width: 100px;
+            grid-template-columns: 100px;
+            grid-template-rows: repeat(2,25px);
+            gap:10px
+
+        }
+        #krt1{
+            display: grid;
+            grid-template-columns: repeat(2,45px);
+            grid-template-rows: 25px;
+            gap:10px
+        }
+        #nobi{
+            color: white;
+            display: grid;
+            border: 1px solid;
+            border-radius: 5px;
+            grid-template-columns: 100px 40px 40px;
+            gap:10px
+
+        }
+        #nobi div{
+            border-radius: 5px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="nobi">
+        <div id="krt">
+            <div style="background-color:#444444 ; height: 25px;">A</div>
+            <div id="krt1">
+            <div style=" background-color:#444444;">C</div>
+            <div style=" background-color:#444444;">D</div>
+           </div>
+        </div>
+        <div style=" background-color:#444444; width: 40px;height:62px">B</div>
+        <div style=" background-color:#444444; width: 40px;height:62px">E</div>
+    </div>
+</body>
+</html>
