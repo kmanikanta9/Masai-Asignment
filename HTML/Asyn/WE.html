@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+    <style>
+        #krt{
+            height: 200px;
+            width: 400px;
+            display: flex;
+            justify-content: space-evenly;
+            background-color:black;
+            border: 5px solid ;
+            align-items: center;
+            border-radius: 10px;
+
+        }
+        #krt div{
+            height:90px;
+            width:80px;
+            background-color:white;
+            text-align: center;
+            font-size: 75px;
+            border-radius: 5px;
+            color: rgb(48, 14, 243);
+
+        }
+    </style>
+</head>
+<body style="display: flex; justify-content: center; padding-top: 200px;" >
+    <div id="krt">
+        <div id="hour">00</div>
+        <div style="width: 20px;background-color: #4C4D52;color: white;font-size: 30px;">. .</div>
+        <div id="min">00</div>
+        <div style="width: 20px;background-color: #4C4D52;color: white;font-size: 30px;">. .</div>
+        <div id="sec">00</div>
+    </div>
+</body>
+</html>
+<script>
+  let a=document.getElementById("hour");
+  let b=document.getElementById("min");
+  let c=document.getElementById("sec");
+  var s=0;
+  var h=0;
+  var m=0;
+  setInterval(function(){
+   s++;
+   if (s>=60){
+    s=0
+    m++;
+    if (m >=60){
+        m=0
+        h++
+        if (h>=24){
+            h=0
+        }
+        a.innerText=h
+    }
+    b.innerText=m
+   } 
+   c.innerText=s;
+
+
+  },1000)
+
+</script>
