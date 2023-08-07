@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fake store</title>
+    <style>
+        #con{
+            display:grid;
+            padding-left: 20px;
+            padding-top: 20px;
+            grid-template-columns: repeat(4,300px);
+            gap:30px;
+        }
+        #con>div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 15px;
+            background-color:beige;
+            height: 500px;
+            width: 300px;
+        }
+        #con>div>div{
+            padding-left: 40px;
+            height:200px;
+            width: 200px;
+        }
+        #con>div>div img{
+            height:200px;
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="display: flex;justify-content: center;">
+    <select name="" id="re">
+        <option value="all">all</option>
+        <option value="men's clothing">men's clothing</option>
+        <option value="jewelery">jewelery</option>
+        <option value="electronics">electonics</option>
+        <option value="women's clothing">women's clothing</option>
+
+    </select>
+    <button onclick="krt()">select</button>
+</div>
+    <div id="con" >
+
+    </div>
+    
+</body>
+</html>
+<script>
+    let se=document.getElementById("re")
+    let kr=document.getElementById("con")
+    nor()
+
+    function reca(arr){
+        kr.innerHTML=""
+    
+        arr.forEach(function(element){  
+            let a=document.createElement("div")
+            let ab=document.createElement("div")
+            let b=document.createElement("img")
+            b.setAttribute("src",element.image)
+            let c=document.createElement("h2")
+            c.innerText=element.title
+            let d=document.createElement("h3")
+            d.innerText=element.price
+            let e=document.createElement("p")
+            e.innerText=element.description
+            let f=document.createElement("h2")
+            f.innerText=element.category
+            ab.append(b)
+            a.append(ab,c,d,f)
+            kr.append(a)
+
+        })
+    }
+    function krt(){
+        let val=se.value
+        console.log(val)
+        let api="https://fakestoreapi.com/products"
+    let res=fetch(api)
+    let arr1=[]
+    let arr2=[]
+    let arr3=[]
+    let arr4=[]
+    res.then(function(r){
+        return r.json()
+    })
+    .then(function(data){
+        display(data)
+    })
+    function display(data){
+        data.forEach(function(element){
+            if (element.category =="men's clothing"){
+              arr1.push(element)
+            }
+            else if (element.category =="jewelery"){
+                arr2.push(element)
+            }
+            else if (element.category =="electronics"){
+                arr3.push(element)
+            }
+            else if (element.category =="women's clothing"){
+                arr4.push(element)
+                
+            }   
+        })
+        if (val=="men's clothing"){
+            reca(arr1)
+        }
+        else if (val=="jewelery"){
+            reca(arr2)
+        }
+        else if(val=="electronics"){
+            reca(arr3)
+        }
+        else if(val =="women's clothing"){
+            reca(arr4)
+        }
+        else{
+            nor()
+        }
+        
+    }
+}
+ function nor(){
+    let api="https://fakestoreapi.com/products"
+    let res=fetch(api)
+   
+    res.then(function(r){
+        return r.json()
+    })
+    .then(function(data){
+        console.log(data)
+        display(data)
+    })
+    function display(data){
+        console.log(se.value)
+        data.forEach(function(element){
+            console.log(element)
+            let a=document.createElement("div")
+            let ab=document.createElement("div")
+            let b=document.createElement("img")
+            b.setAttribute("src",element.image)
+            let c=document.createElement("h2")
+            c.innerText=element.title
+            let d=document.createElement("h3")
+            d.innerText=element.price
+            let e=document.createElement("p")
+            e.innerText=element.description
+            let f=document.createElement("h2")
+            f.innerText=element.category
+            ab.append(b)
+            a.append(ab,c,d,f)
+            let kr=document.getElementById("con")
+            kr.append(a)
+     })
+    }
+}
+
+</script>
