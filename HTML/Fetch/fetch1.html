@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+<body style="display:flex;justify-content:center;">
+    <table border="1px" cellspacing="0">
+        <thead>
+            <tr style="text-align: center;">
+                <th>userId</th>
+            <th>id</th>
+            <th>title</th>
+            <th>statu</th>
+        </tr>
+        </thead>
+        <tbody id="con" style="text-align: center;">
+
+        </tbody>
+    </table>
+    
+</body>
+</html>
+<script>
+    let api="https://jsonplaceholder.typicode.com/todos"
+    let a=fetch(api)
+    a.then(function(res){
+        return res.json()
+    })
+    .then(function(data){
+        display(data)
+    })
+    function display(data){
+        data.forEach(function(element){
+            console.log(element)
+            let kr=document.createElement("tr")
+            let a1=document.createElement("td")
+            a1.innerText=element.userId
+            let a=document.createElement("td")
+            a.innerText=element.id
+            let b=document.createElement("td")
+            b.innerText=element.title
+            let d=document.createElement("td")
+            d.innerText=element.completed
+            kr.append(a1,a,b,d)
+            let con=document.getElementById("con")
+            con.append(kr)
+
+        })
+        
+    }
+</script>
