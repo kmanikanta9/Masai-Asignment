@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(to right, #1c92d2, #f2fcfe, #642B73, #C6426E);
+            font-family: Arial, sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #100505e3;
+        }
+        p {
+            color:black;
+        }
+        #result {
+            color: #D8000C;
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 20px;
+            background-color: #f2fcfe;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        input, button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+        input {
+            border: none;
+            background-color: #f2fcfe;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the Number Game</h1>
+    <p>We have selected a random number between 1 and 100. See if you can guess it.</p>
+    <div id="result"></div>
+    <input type="text" id="number" placeholder="Enter a number...">
+    <button onclick="guessNumber()">Guess</button>
+
+    <script>
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        function guessNumber(){
+            var userGuess = document.getElementById('number').value;
+            var resultElement = document.getElementById('result');
+
+            if(userGuess < randomNumber){
+                resultElement.innerHTML = "Too low!";
+                resultElement.style.color = "blue";
+            } else if(userGuess > randomNumber){
+                resultElement.innerHTML = "Too high!";
+                resultElement.style.color = "red";
+            } else {
+                resultElement.innerHTML = "Congratulations! You guessed the number.";
+                resultElement.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>
